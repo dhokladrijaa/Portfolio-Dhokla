@@ -27,6 +27,25 @@
             z-index: 1000;
             transition: background 0.3s ease-in-out;
         }
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
         nav ul {
             list-style: none;
             padding: 0;
@@ -42,9 +61,29 @@
         nav ul li a:hover {
             color: #ffcc00;
         }
+        @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
         section {
-            padding: 60px 20px;
-            min-height: 80vh;
+            padding: 10% 10%;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,6 +92,12 @@
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease-in-out forwards;
         }
+        @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         .divider {
     width: 80%;
     height: 2px;
@@ -61,12 +106,6 @@
     backdrop-filter: blur(5px); 
     border-radius: 2px;
 }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
         .project-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -269,7 +308,72 @@
     transform: scale(1.2);
     filter: brightness(1.2);
 }
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text {
+        max-width: 90%;
+    }
+    .about-image img {
+        width: 180px;
+        height: 180px;
+    }
+}
 
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .circular-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p, .contact-container p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        padding: 20px;
+    }
+
+    .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
 
     </style>
 </head>
@@ -285,7 +389,12 @@
             </ul>
         </nav>
     </header>
-    
+     <script>
+        function toggleMenu() {
+            const navList = document.querySelector("nav ul");
+            navList.classList.toggle("active");
+        }
+    </script>
     <section id="home">
         <img src="dhokla2.jpg" alt="Circular Image" class="circular-img">
         <h2>Hey There! I'm  <span class="cursive-name">Adrija</span></h2>
