@@ -239,6 +239,9 @@
                 transform: translateY(0);
             }
         }
+        html {
+    scroll-behavior: smooth;
+            }
         body {
             font-family: 'Poppins', serif;
             margin: 0;
@@ -247,8 +250,8 @@
             color: white; 
             text-align: center;
             overflow-x: hidden;
-        }
-                header {
+            }
+            header {
                     background: #333;
                     color: white;
                     padding: 1rem 0;
@@ -366,16 +369,18 @@
                 footer {
                     background: #333;
                     color: white;
-                    padding: 1rem 0;
+                    padding: 20px;
                     text-align: center;
                 }
-                
-                footer {
-                    background: #333;
-                    color: white;
-                    padding: 1rem 0;
-                    text-align: center;
+                footer hr {
+                    width: 100%;
+                    border: 1px solid #888; /* Adjust color for better visibility */
                 }
+
+                footer p {
+                    margin: 10px 0;
+                }
+          
                 
                 .circular-img {
                     width: 150px;
