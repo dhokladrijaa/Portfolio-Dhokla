@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <h1>My Portfolio</h1>
+<!--         <h1>My Portfolio</h1> -->
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -333,9 +333,14 @@
                     transition: filter 0.3s ease-in-out;
                 }
                 .project-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                     position: absolute;
                     bottom: 0;
-                    left: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
                     width: 100%;
                     background: rgba(0, 0, 0, 0.8);
                     color: white;
